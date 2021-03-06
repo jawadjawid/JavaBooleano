@@ -1,6 +1,6 @@
 package booleanoo;
 
-public class Variable {
+public class Variable implements BooleanExpression{
 
   @Override
   public boolean equals(Object other) {

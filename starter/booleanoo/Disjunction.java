@@ -1,3 +1,3 @@
 package booleanoo;
 
-public class Disjunction {}
+public class Disjunction extends BinaryExpression {}

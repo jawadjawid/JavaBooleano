@@ -1,3 +1,3 @@
 package booleanoo;
 
-public class Implies {}
+public class Implies implements BinaryOperator {}

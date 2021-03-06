@@ -1,3 +1,3 @@
 package booleanoo;
 
-public class IffExpression {}
+public class IffExpression extends BinaryExpression {}

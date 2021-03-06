@@ -1,6 +1,6 @@
 package booleanoo;
 
-public class Iff {
+public class Iff implements BinaryOperator {
   
   @Override
   public boolean equals(Object other) {

@@ -1,6 +1,6 @@
 package booleanoo;
 
-public class Or {
+public class Or implements BinaryOperator {
   @Override
   public boolean equals(Object other) {
     return other != null

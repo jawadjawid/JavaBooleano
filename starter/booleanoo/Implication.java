@@ -1,4 +1,4 @@
 package booleanoo;
 
 
-public class Implication {}
+public class Implication extends BinaryExpression  {}

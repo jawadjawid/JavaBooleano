@@ -1,5 +1,5 @@
 package booleanoo;
 
 
-public class Conjunction {
+public class Conjunction extends BinaryExpression  {
 }

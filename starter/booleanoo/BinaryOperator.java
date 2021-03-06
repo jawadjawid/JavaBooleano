@@ -1,3 +1,3 @@
 package booleanoo;
 
-public interface BinaryOperator {}
+public interface BinaryOperator extends BooleanOperator {}

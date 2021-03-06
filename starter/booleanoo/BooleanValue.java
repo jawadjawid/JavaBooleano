@@ -1,6 +1,6 @@
 package booleanoo;
 
-public class BooleanValue {
+public class BooleanValue implements BooleanExpression {
 
   @Override
   public String toString() {

@@ -1,6 +1,6 @@
 package booleanoo;
 
-public class BinaryExpression {
+public class BinaryExpression implements BooleanExpression{
 
   @Override
   public boolean equals(Object other) {

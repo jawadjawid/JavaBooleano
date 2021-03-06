@@ -1,6 +1,6 @@
 package booleanoo;
 
-public class Not {
+public class Not implements UnaryOperator{
   
   @Override
   public boolean equals(Object other) {

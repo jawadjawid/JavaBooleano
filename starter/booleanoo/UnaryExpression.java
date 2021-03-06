@@ -1,6 +1,6 @@
 package booleanoo;
 
-public abstract class UnaryExpression {
+public abstract class UnaryExpression implements BooleanExpression{
   @Override
   public boolean equals(Object other) {
     return other != null

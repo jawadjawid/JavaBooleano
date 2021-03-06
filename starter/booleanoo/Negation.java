@@ -1,3 +1,3 @@
 package booleanoo;
 
-public class Negation {}
+public class Negation extends UnaryExpression{}
