@@ -12,4 +12,10 @@ public class Not implements UnaryOperator{
   public String toString() {
     return Constants.NOT;
   }
+
+  @Override
+  public Boolean apply(Boolean operand) {
+    return !operand;
+  }
 }
+

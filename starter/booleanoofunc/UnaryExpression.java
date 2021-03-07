@@ -1,6 +1,8 @@
 package booleanoofunc;
 
 
+import booleanoo.Negation;
+
 import java.util.Map;
 import java.util.function.Function;
 import java.util.function.UnaryOperator;
@@ -22,7 +24,7 @@ public abstract class UnaryExpression implements BooleanExpression{
   }
 
   public booleanoofunc.BooleanExpression simplify(Map<String, Boolean> context)  {
-    return null;
+    return simplifier.apply(this.simplify(context));
   }
 
   @Override

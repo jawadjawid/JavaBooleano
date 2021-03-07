@@ -12,11 +12,11 @@ public abstract class UnaryExpression implements BooleanExpression{
     this.operand = operand;
   }
 
-  public Boolean evaluate(Map<String, Boolean> context) {
-    return true;
+  public Boolean evaluate(Map<String, Boolean> context) throws UnassignedVariableException {
+    return this.operator.apply(this.operand.evaluate(context));
   }
 
-  protected final UnaryOperator  getOperator() {
+  protected final UnaryOperator getOperator() {
     return operator;
   }
 
