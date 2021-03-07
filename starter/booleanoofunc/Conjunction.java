@@ -9,7 +9,18 @@ public class Conjunction extends BinaryExpression {
     super((x, y) -> (x && y), left, right, Conjunction::simplifyAnd);  // this is called a "method reference"
   }
   private static BooleanExpression simplifyAnd(BooleanExpression left, BooleanExpression right) {
-    return null; // implement this method
+    BooleanValue trueObj = new BooleanValue(true);
+    BooleanValue falseObj = new BooleanValue(false);
+
+    if (left.equals(right))
+      return left;
+    else if(left.equals(trueObj))
+      return right;
+    else if(right.equals(trueObj))
+      return left;
+    else if(left.equals(falseObj) || right.equals(falseObj))
+      return falseObj;
+    return new Conjunction(left, right);
   }
 
   @Override

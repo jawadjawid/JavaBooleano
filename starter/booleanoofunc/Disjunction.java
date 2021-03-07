@@ -8,7 +8,18 @@ public class Disjunction extends BinaryExpression{
     super((x, y) -> (x || y), left, right, Disjunction::simplifyOr);  // this is called a "method reference"
   }
   private static BooleanExpression simplifyOr(BooleanExpression left, BooleanExpression right) {
-    return null; // implement this method
+    BooleanValue trueObj = new BooleanValue(true);
+    BooleanValue falseObj = new BooleanValue(false);
+
+    if (left.equals(right))
+      return left;
+    else if(left.equals(falseObj))
+      return right;
+    else if(right.equals(falseObj))
+      return left;
+    else if(left.equals(trueObj) || right.equals(trueObj))
+      return trueObj;
+    return new Disjunction(left, right);
   }
 
   @Override

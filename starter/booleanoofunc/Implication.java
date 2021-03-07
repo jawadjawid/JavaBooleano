@@ -8,7 +8,18 @@ public class Implication extends BinaryExpression {
     super((x, y) -> (!x || y), left, right, Implication::simplifyImplies);  // this is called a "method reference"
   }
   private static BooleanExpression simplifyImplies(BooleanExpression left, BooleanExpression right) {
-    return null; // implement this method
+    BooleanValue trueObj = new BooleanValue(true);
+    BooleanValue falseObj = new BooleanValue(false);
+
+    if (left.equals(right))
+      return trueObj;
+    else if(left.equals(trueObj))
+      return right;
+    else if(right.equals(falseObj))
+      return new Negation(left);
+    else if(left.equals(falseObj) || right.equals(trueObj))
+      return trueObj;
+    return new Implication(left, right);
   }
 
   @Override
