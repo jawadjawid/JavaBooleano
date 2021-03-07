@@ -9,9 +9,8 @@ public class Implication extends BinaryExpression  {
         super(new Implies(), left, right);
     }
 
-    public BooleanExpression simplify(Map<String, Boolean> context) throws Exception {
-        throw new Exception("Exception message");
+    public BooleanExpression simplify(Map<String, Boolean> context) {
 
-        //return left;
+return null;
     }
 }

@@ -8,10 +8,8 @@ public class IffExpression extends BinaryExpression {
         super(new Iff(), left, right);
     }
 
-    public BooleanExpression simplify(Map<String, Boolean> context) throws Exception {
-        throw new Exception("Exception message");
-
-        //return left;
+    public BooleanExpression simplify(Map<String, Boolean> context)  {
+      return null;
     }
 
 }

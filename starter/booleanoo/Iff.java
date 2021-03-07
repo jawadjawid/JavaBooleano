@@ -12,4 +12,9 @@ public class Iff implements BinaryOperator {
   public String toString() {
     return Constants.IFF;
   }
+
+  @Override
+  public Boolean apply(Boolean left, Boolean right) {
+    return left == right;
+  }
 }

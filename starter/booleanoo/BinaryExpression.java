@@ -4,9 +4,9 @@ import java.util.Map;
 
 public abstract class BinaryExpression implements BooleanExpression{
 
-  private final BinaryOperator operator;
-  private final BooleanExpression left;
-  private final BooleanExpression right;
+  private BinaryOperator operator;
+  private BooleanExpression left;
+  private BooleanExpression right;
 
   public BinaryExpression(BinaryOperator operator, BooleanExpression left, BooleanExpression right) {
     this.operator = operator;
@@ -14,20 +14,19 @@ public abstract class BinaryExpression implements BooleanExpression{
     this.right = right;
   }
 
-  public Boolean evaluate(Map<String, Boolean> context) throws Exception {
-    throw new Exception("Exception message");
-    //return true;
+  public Boolean evaluate(Map<String, Boolean> context) throws UnassignedVariableException {
+    return this.operator.apply(this.left.evaluate(context), this.right.evaluate(context));
   }
 
-  protected BinaryOperator getOperator() {
+  protected final BinaryOperator getOperator() {
     return operator;
   }
 
-  protected BooleanExpression getLeft() {
+  protected final BooleanExpression getLeft() {
     return left;
   }
 
-  protected BooleanExpression getRight() {
+  protected final BooleanExpression getRight() {
     return right;
   }
 

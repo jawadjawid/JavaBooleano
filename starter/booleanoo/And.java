@@ -12,4 +12,9 @@ public class And implements BinaryOperator {
   public String toString() {
     return Constants.AND;
   }
+
+  @Override
+  public Boolean apply(Boolean left, Boolean right) {
+    return left && right;
+  }
 }

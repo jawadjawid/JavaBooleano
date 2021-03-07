@@ -11,8 +11,11 @@ public class Variable implements BooleanExpression{
   }
 
   @Override
-  public Boolean evaluate(Map<String, Boolean> context) {
-    return null;
+  public Boolean evaluate(Map<String, Boolean> context) throws UnassignedVariableException {
+    if (!context.containsKey(id))
+      throw new UnassignedVariableException();
+    else
+      return context.get(id);
   }
 
   @Override

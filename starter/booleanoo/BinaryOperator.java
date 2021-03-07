@@ -1,3 +1,7 @@
 package booleanoo;
 
-public interface BinaryOperator extends BooleanOperator {}
+import java.util.Map;
+
+public interface BinaryOperator extends BooleanOperator {
+    public Boolean apply(Boolean left, Boolean right);
+}

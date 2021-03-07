@@ -8,9 +8,9 @@ public class Disjunction extends BinaryExpression {
         super(new Or(), left, right);
     }
 
-    public BooleanExpression simplify(Map<String, Boolean> context) throws Exception {
-        throw new Exception("Exception message");
+    public BooleanExpression simplify(Map<String, Boolean> context)  {
 
-        //return left;
+        return null;
+
     }
 }

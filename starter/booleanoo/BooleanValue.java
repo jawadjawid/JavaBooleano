@@ -17,12 +17,12 @@ public class BooleanValue implements BooleanExpression {
 
   @Override
   public Boolean evaluate(Map<String, Boolean> context) {
-    return null;
+    return value;
   }
 
   @Override
   public BooleanExpression simplify(Map<String, Boolean> context) {
-    return null;
+    return this;
   }
 
   @Override

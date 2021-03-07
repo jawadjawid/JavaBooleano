@@ -8,9 +8,9 @@ public class Conjunction extends BinaryExpression  {
         super(new And(), left, right);
     }
 
-    public BooleanExpression simplify(Map<String, Boolean> context) throws Exception {
-        throw new Exception("Exception message");
+    public BooleanExpression simplify(Map<String, Boolean> context) {
 
-        //return left;
+        return null;
+
     }
 }
