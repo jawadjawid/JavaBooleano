@@ -1,6 +1,33 @@
 package booleanoo;
 
+import java.util.Map;
+
 public abstract class UnaryExpression implements BooleanExpression{
+
+  private UnaryOperator operator;
+  private BooleanExpression operand;
+
+  public UnaryExpression(UnaryOperator operator, BooleanExpression operand) {
+    this.operator = operator;
+    this.operand = operand;
+  }
+
+  public Boolean evaluate(Map<String, Boolean> context) {
+    return true;
+  }
+
+  public BooleanExpression simplify(Map<String, Boolean> context) {
+    return operand;
+  }
+
+  protected UnaryOperator getOperator() {
+    return operator;
+  }
+
+  protected BooleanExpression getOperand() {
+    return operand;
+  }
+
   @Override
   public boolean equals(Object other) {
     return other != null
