@@ -27,10 +27,6 @@ public abstract class BinaryExpression implements BooleanExpression {
     return null;
   }
 
-  protected final BinaryOperator<Boolean> getOperator() {
-    return operator;
-  }
-
   @Override
   public  boolean equals(Object other) {
     return other != null
