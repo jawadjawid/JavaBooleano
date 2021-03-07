@@ -39,6 +39,6 @@ public abstract class BooleanExpressions {
   // func and the identity. Do NOT use any loops.  Use Java Streams and the methods map and reduce.
   public static Boolean evaluateMapReduce(BiFunction<Boolean,Boolean,Boolean> func, Boolean identity,
                                           List<BooleanExpression> expressions, Map<String, Boolean> context) {
-      return null;
+    return evaluateAll(expressions, context).stream().reduce(identity, (a, b) -> func.apply(a, b));
   }
 }
