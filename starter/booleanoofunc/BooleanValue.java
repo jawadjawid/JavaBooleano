@@ -1,7 +1,5 @@
 package booleanoofunc;
 
-import booleanoo.BooleanExpression;
-
 import java.util.Map;
 
 public class BooleanValue implements booleanoofunc.BooleanExpression {

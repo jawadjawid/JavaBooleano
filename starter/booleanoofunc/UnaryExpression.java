@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.function.UnaryOperator;
 
-public abstract class UnaryExpression {
+public abstract class UnaryExpression implements BooleanExpression{
 
   private UnaryOperator<Boolean> operator;
   private booleanoofunc.BooleanExpression operand;
@@ -19,6 +19,10 @@ public abstract class UnaryExpression {
 
   public Boolean evaluate(Map<String, Boolean> context) {
     return true;
+  }
+
+  public booleanoofunc.BooleanExpression simplify(Map<String, Boolean> context)  {
+    return null;
   }
 
   @Override

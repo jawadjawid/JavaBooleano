@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
 
-public abstract class BinaryExpression {
+public abstract class BinaryExpression implements BooleanExpression {
 
   private BinaryOperator<Boolean> operator;
   private booleanoofunc.BooleanExpression left;
@@ -21,6 +21,10 @@ public abstract class BinaryExpression {
 
   public Boolean evaluate(Map<String, Boolean> context) throws booleanoofunc.UnassignedVariableException {
     return this.operator.apply(this.left.evaluate(context), this.right.evaluate(context));
+  }
+
+  public booleanoofunc.BooleanExpression simplify(Map<String, Boolean> context)  {
+    return null;
   }
 
   protected final BinaryOperator<Boolean> getOperator() {
