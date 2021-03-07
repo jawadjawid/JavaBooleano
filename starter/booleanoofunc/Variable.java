@@ -1,8 +1,5 @@
 package booleanoofunc;
 
-import booleanoo.BooleanValue;
-import booleanoo.UnassignedVariableException;
-
 import java.util.Map;
 
 public class Variable implements BooleanExpression {

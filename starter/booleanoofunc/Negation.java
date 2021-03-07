@@ -8,8 +8,17 @@ public class Negation extends UnaryExpression {
   }
   
   private static BooleanExpression simplifyNot(BooleanExpression expr) {
-    return null; // implement this method
-  } 
+    BooleanValue trueObj = new BooleanValue(true);
+    BooleanValue falseObj = new BooleanValue(false);
+
+    if (expr instanceof UnaryExpression)
+      return ((booleanoofunc.UnaryExpression) expr).getOperand();
+    else if(expr.equals(trueObj))
+      return falseObj;
+    else if(expr.equals(falseObj))
+      return trueObj;
+    return new Negation(expr);
+  }
   
   @Override
   public String toStringOp() {

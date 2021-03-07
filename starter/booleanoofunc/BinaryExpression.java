@@ -23,8 +23,8 @@ public abstract class BinaryExpression implements BooleanExpression {
     return this.operator.apply(this.left.evaluate(context), this.right.evaluate(context));
   }
 
-  public booleanoofunc.BooleanExpression simplify(Map<String, Boolean> context)  {
-    return null;
+  public booleanoofunc.BooleanExpression simplify(Map<String, Boolean> context) {
+    return simplifier.apply(this.left.simplify(context), this.right.simplify(context));
   }
 
   @Override
