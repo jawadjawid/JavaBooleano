@@ -36,7 +36,6 @@ public class BooleanEval {
    * Examples of using the hierarchy of Boolean Expressions.
    */
   private static void demoHierarchy() {
-      
     // ((a iff (not b)) implies ((true and c) iff ((not b) and c)))
     BooleanExpression expr =
         new Implication(

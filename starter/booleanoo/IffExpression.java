@@ -21,9 +21,9 @@ public class IffExpression extends BinaryExpression {
         else if(rightSimple.equals(trueObj))
             return leftSimple;
         else if(leftSimple.equals(falseObj))
-            return new Negation(rightSimple);
+            return new Negation(rightSimple).simplify(context);
         else if(rightSimple.equals(falseObj))
-            return new Negation(leftSimple);
+            return new Negation(leftSimple).simplify(context);
         return new IffExpression(leftSimple, rightSimple);
     }
 }
