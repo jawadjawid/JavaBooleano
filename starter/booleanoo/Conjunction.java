@@ -8,9 +8,13 @@ public class Conjunction extends BinaryExpression  {
         super(new And(), left, right);
     }
 
-    public BooleanExpression simplify(Map<String, Boolean> context) {
+    public BooleanExpression simplify(Map<String, Boolean> context)  {
+        BooleanValue trueObj = new BooleanValue(true);
+        BooleanValue falseObj = new BooleanValue(false);
 
-        return null;
-
+        if (this.getLeft() instanceof BooleanValue && this.getRight() instanceof BooleanValue){
+            return new BooleanValue(this.getLeft().equals(trueObj) && this.getRight().equals(trueObj));
+        }
+        return new Conjunction(this.getLeft().simplify(context), this.getRight().simplify(context));
     }
 }

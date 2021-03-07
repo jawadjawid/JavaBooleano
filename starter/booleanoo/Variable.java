@@ -20,12 +20,14 @@ public class Variable implements BooleanExpression{
 
   @Override
   public BooleanExpression simplify(Map<String, Boolean> context) {
-    return null;
+    if (!context.containsKey(id))
+      return this;
+    else
+      return new BooleanValue(context.get(id));
   }
 
   @Override
   public boolean equals(Object other) {
-    
     return other != null
         && other.getClass().equals(Variable.class)
         && id.equals(((Variable)other).id);
