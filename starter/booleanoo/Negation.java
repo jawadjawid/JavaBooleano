@@ -7,8 +7,12 @@ public class Negation extends UnaryExpression{
         super(new Not(), op);
     }
 
-    public BooleanExpression simplify(Map<String, Boolean> context) {
-        return null;
-    }
+    public BooleanExpression simplify(Map<String, Boolean> context)  {
+        BooleanExpression operandSimple = this.getOperand().simplify(context);
 
+        if (operandSimple instanceof UnaryExpression)
+            return ((UnaryExpression) operandSimple).getOperand().simplify(context);
+
+        return new Negation(operandSimple);
+    }
 }

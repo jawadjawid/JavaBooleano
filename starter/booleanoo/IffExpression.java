@@ -11,12 +11,19 @@ public class IffExpression extends BinaryExpression {
     public BooleanExpression simplify(Map<String, Boolean> context)  {
         BooleanValue trueObj = new BooleanValue(true);
         BooleanValue falseObj = new BooleanValue(false);
+        BooleanExpression leftSimple = this.getLeft().simplify(context);
+        BooleanExpression rightSimple = this.getRight().simplify(context);
 
-        if (this.getLeft() instanceof  BooleanValue && this.getRight() instanceof  BooleanValue){
-//            return new BooleanValue((this.getLeft().equals(trueObj) && this.getRight().equals(trueObj))
-//                    || (this.getLeft().equals(falseObj) && this.getRight().equals(falseObj)));
-            return new BooleanValue(this.getLeft().equals(this.getRight()));
-        }
-        return new IffExpression(this.getLeft().simplify(context), this.getRight().simplify(context));
+        if (leftSimple.equals(rightSimple))
+            return trueObj;
+        else if(leftSimple.equals(trueObj))
+            return rightSimple;
+        else if(rightSimple.equals(trueObj))
+            return leftSimple;
+        else if(leftSimple.equals(falseObj))
+            return new Negation(rightSimple);
+        else if(rightSimple.equals(falseObj))
+            return new Negation(leftSimple);
+        return new IffExpression(leftSimple, rightSimple);
     }
 }

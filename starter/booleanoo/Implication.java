@@ -11,11 +11,18 @@ public class Implication extends BinaryExpression  {
 
     public BooleanExpression simplify(Map<String, Boolean> context)  {
         BooleanValue trueObj = new BooleanValue(true);
-        if (this.getLeft() instanceof BooleanValue && this.getRight() instanceof BooleanValue){
-            if(this.getLeft().equals(trueObj))
-                return this.getRight();
+        BooleanValue falseObj = new BooleanValue(false);
+        BooleanExpression leftSimple = this.getLeft().simplify(context);
+        BooleanExpression rightSimple = this.getRight().simplify(context);
+
+        if (leftSimple.equals(rightSimple))
             return trueObj;
-        }
-        return new Implication(this.getLeft().simplify(context), this.getRight().simplify(context));
+        else if(leftSimple.equals(trueObj))
+            return rightSimple;
+        else if(rightSimple.equals(falseObj))
+            return new Negation(leftSimple);
+        else if(leftSimple.equals(falseObj) || rightSimple.equals(trueObj))
+            return trueObj;
+        return new Implication(leftSimple, rightSimple);
     }
 }

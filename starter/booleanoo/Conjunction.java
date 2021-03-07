@@ -11,10 +11,17 @@ public class Conjunction extends BinaryExpression  {
     public BooleanExpression simplify(Map<String, Boolean> context)  {
         BooleanValue trueObj = new BooleanValue(true);
         BooleanValue falseObj = new BooleanValue(false);
+        BooleanExpression leftSimple = this.getLeft().simplify(context);
+        BooleanExpression rightSimple = this.getRight().simplify(context);
 
-        if (this.getLeft() instanceof BooleanValue && this.getRight() instanceof BooleanValue){
-            return new BooleanValue(this.getLeft().equals(trueObj) && this.getRight().equals(trueObj));
-        }
-        return new Conjunction(this.getLeft().simplify(context), this.getRight().simplify(context));
+        if (leftSimple.equals(rightSimple))
+            return leftSimple;
+        else if(leftSimple.equals(trueObj))
+            return rightSimple;
+        else if(rightSimple.equals(trueObj))
+            return leftSimple;
+        else if(leftSimple.equals(falseObj) || rightSimple.equals(falseObj))
+            return falseObj;
+        return new Conjunction(leftSimple, rightSimple);
     }
 }
