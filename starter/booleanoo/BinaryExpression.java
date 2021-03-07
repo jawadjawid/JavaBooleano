@@ -19,12 +19,6 @@ public abstract class BinaryExpression implements BooleanExpression{
     //return true;
   }
 
-  public BooleanExpression simplify(Map<String, Boolean> context) throws Exception {
-    throw new Exception("Exception message");
-
-    //return left;
-  }
-
   protected BinaryOperator getOperator() {
     return operator;
   }

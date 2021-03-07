@@ -16,10 +16,6 @@ public abstract class UnaryExpression implements BooleanExpression{
     return true;
   }
 
-  public BooleanExpression simplify(Map<String, Boolean> context) {
-    return operand;
-  }
-
   protected UnaryOperator getOperator() {
     return operator;
   }
