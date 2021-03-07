@@ -1,12 +1,34 @@
 package booleanoofunc;
 
-public class UnaryExpression {
+
+import java.util.Map;
+import java.util.function.Function;
+import java.util.function.UnaryOperator;
+
+public abstract class UnaryExpression {
+
+  private UnaryOperator<Boolean> operator;
+  private booleanoofunc.BooleanExpression operand;
+  private Function<BooleanExpression, BooleanExpression> simplifier;
+
+  public UnaryExpression(UnaryOperator<Boolean> operator, BooleanExpression operand, Function<BooleanExpression, BooleanExpression> simplifier) {
+    this.operator = operator;
+    this.operand = operand;
+    this.simplifier = simplifier;
+  }
+
+  public Boolean evaluate(Map<String, Boolean> context) {
+    return true;
+  }
+
   @Override
   public boolean equals(Object other) {
     return other != null
         && other.getClass().equals(this.getClass()) 
         && ((UnaryExpression)other).operand.equals(operand);
   }
+
+  public abstract String toStringOp();
 
   @Override
   public String toString() {

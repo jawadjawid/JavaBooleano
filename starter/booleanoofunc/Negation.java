@@ -1,6 +1,6 @@
 package booleanoofunc;
 
-public class Negation {
+public class Negation extends UnaryExpression {
 
   // This is to get you started using Java's functional features. 
   public Negation(BooleanExpression operand) {

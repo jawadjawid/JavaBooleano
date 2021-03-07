@@ -16,11 +16,11 @@ public abstract class UnaryExpression implements BooleanExpression{
     return true;
   }
 
-  protected UnaryOperator getOperator() {
+  protected final UnaryOperator  getOperator() {
     return operator;
   }
 
-  protected BooleanExpression getOperand() {
+  protected final BooleanExpression getOperand() {
     return operand;
   }
 
