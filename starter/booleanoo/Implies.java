@@ -15,4 +15,9 @@ public class Implies implements BinaryOperator {
   public String toString() {
     return Constants.IMPLIES;
   }
+
+  @Override
+  public boolean equals(Object other) {
+    return other != null && other.getClass().equals(Implies.class);
+  }
 }
