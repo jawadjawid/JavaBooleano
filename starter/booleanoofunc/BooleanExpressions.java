@@ -10,16 +10,16 @@ public abstract class BooleanExpressions {
   // Returns a List of the results of evaluating all expressions. Do NOT use any loops.
   // Use Java Streams and the method map.
   public static List<Boolean> evaluateAll(
-      List<BooleanExpression> expressions, Map<String, Boolean> context) {
-    return expressions.stream()
-        .map(a -> a.evaluate(context))
-        .collect(Collectors.toList());
+      List<BooleanExpression> expressions, Map<String, Boolean> context)
+      throws booleanoofunc.UnassignedVariableException {
+    return expressions.stream().map(a -> a.evaluate(context)).collect(Collectors.toList());
   }
 
   // Returns the conjuction of all results of evaluating all expressions. Do NOT use any loops.
   // Use Java Streams and the method reduce ONLY.
   public static Boolean evaluateAndReduce(
-      List<BooleanExpression> expressions, Map<String, Boolean> context) {
+      List<BooleanExpression> expressions, Map<String, Boolean> context)
+      throws booleanoofunc.UnassignedVariableException {
     return expressions.stream()
         .reduce(
             new BooleanValue(true),
@@ -30,14 +30,16 @@ public abstract class BooleanExpressions {
   // Returns the conjuction of all results of evaluating all expressions. Do NOT use any loops.
   // Use Java Streams and the methods map and reduce.
   public static Boolean evaluateAndMapReduce(
-      List<BooleanExpression> expressions, Map<String, Boolean> context) {
+      List<BooleanExpression> expressions, Map<String, Boolean> context)
+      throws booleanoofunc.UnassignedVariableException {
     return evaluateAll(expressions, context).stream().reduce(true, (a, b) -> a && b);
   }
 
   // Returns the disjuction of all results of evaluating all expressions. Do NOT use any loops.
   // Use Java Streams and the methods map and reduce.
   public static Boolean evaluateOrMapReduce(
-      List<BooleanExpression> expressions, Map<String, Boolean> context) {
+      List<BooleanExpression> expressions, Map<String, Boolean> context)
+      throws booleanoofunc.UnassignedVariableException {
     return evaluateAll(expressions, context).stream().reduce(false, (a, b) -> a || b);
   }
 
@@ -47,7 +49,8 @@ public abstract class BooleanExpressions {
       BiFunction<Boolean, Boolean, Boolean> func,
       Boolean identity,
       List<BooleanExpression> expressions,
-      Map<String, Boolean> context) {
+      Map<String, Boolean> context)
+      throws booleanoofunc.UnassignedVariableException {
     return evaluateAll(expressions, context).stream().reduce(identity, (a, b) -> func.apply(a, b));
   }
 }
