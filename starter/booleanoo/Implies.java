@@ -9,4 +9,9 @@ public class Implies implements BinaryOperator {
     }
     return true;
   }
+
+  @Override
+  public String toString() {
+    return Constants.IMPLIES;
+  }
 }
