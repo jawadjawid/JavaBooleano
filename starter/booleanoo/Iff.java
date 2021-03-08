@@ -1,11 +1,10 @@
 package booleanoo;
 
 public class Iff implements BinaryOperator {
-  
+
   @Override
   public boolean equals(Object other) {
-    return other != null
-        && other.getClass().equals(Iff.class);
+    return other != null && other.getClass().equals(Iff.class);
   }
 
   @Override

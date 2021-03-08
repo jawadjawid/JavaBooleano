@@ -1,7 +1,7 @@
 package booleanoo;
 
 public interface BooleanOperator {
-    public boolean equals(Object other);
+  public boolean equals(Object other);
 
-    public String toString();
+  public String toString();
 }

@@ -2,7 +2,7 @@ package booleanoo;
 
 import java.util.Map;
 
-public abstract class UnaryExpression implements BooleanExpression{
+public abstract class UnaryExpression implements BooleanExpression {
 
   private UnaryOperator operator;
   private BooleanExpression operand;
@@ -27,9 +27,9 @@ public abstract class UnaryExpression implements BooleanExpression{
   @Override
   public boolean equals(Object other) {
     return other != null
-        && other.getClass().equals(this.getClass()) 
-        && ((UnaryExpression)other).operator.equals(operator)
-        && ((UnaryExpression)other).operand.equals(operand);
+        && other.getClass().equals(this.getClass())
+        && ((UnaryExpression) other).operator.equals(operator)
+        && ((UnaryExpression) other).operand.equals(operand);
   }
 
   @Override

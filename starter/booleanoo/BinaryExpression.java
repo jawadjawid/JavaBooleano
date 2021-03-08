@@ -2,13 +2,14 @@ package booleanoo;
 
 import java.util.Map;
 
-public abstract class BinaryExpression implements BooleanExpression{
+public abstract class BinaryExpression implements BooleanExpression {
 
   private BinaryOperator operator;
   private BooleanExpression left;
   private BooleanExpression right;
 
-  public BinaryExpression(BinaryOperator operator, BooleanExpression left, BooleanExpression right) {
+  public BinaryExpression(BinaryOperator operator, BooleanExpression left,
+                          BooleanExpression right) {
     this.operator = operator;
     this.left = left;
     this.right = right;
@@ -34,9 +35,9 @@ public abstract class BinaryExpression implements BooleanExpression{
   public boolean equals(Object other) {
     return other != null
         && other.getClass().equals(this.getClass()) 
-        && ((BinaryExpression)other).operator.equals(operator)
-        && ((BinaryExpression)other).left.equals(left)
-        && ((BinaryExpression)other).right.equals(right);
+        && ((BinaryExpression) other).operator.equals(operator)
+        && ((BinaryExpression) other).left.equals(left)
+        && ((BinaryExpression) other).right.equals(right);
   }
 
   @Override
