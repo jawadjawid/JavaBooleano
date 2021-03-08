@@ -5,25 +5,32 @@ import java.util.function.BinaryOperator;
 
 public class Implication extends BinaryExpression {
   public Implication(BooleanExpression left, BooleanExpression right) {
-    super((x, y) -> (!x || y), left, right, Implication::simplifyImplies);  // this is called a "method reference"
+    super(
+        (x, y) -> (!x || y),
+        left,
+        right,
+        Implication::simplifyImplies); // this is called a "method reference"
   }
-  private static BooleanExpression simplifyImplies(BooleanExpression left, BooleanExpression right) {
+
+  private static BooleanExpression simplifyImplies(
+      BooleanExpression left, BooleanExpression right) {
     BooleanValue trueObj = new BooleanValue(true);
     BooleanValue falseObj = new BooleanValue(false);
 
-    if (left.equals(right))
+    if (left.equals(right)) {
       return trueObj;
-    else if(left.equals(trueObj))
+    } else if (left.equals(trueObj)) {
       return right;
-    else if(right.equals(falseObj))
+    } else if (right.equals(falseObj)) {
       return new Negation(left);
-    else if(left.equals(falseObj) || right.equals(trueObj))
+    } else if (left.equals(falseObj) || right.equals(trueObj)) {
       return trueObj;
+    }
     return new Implication(left, right);
   }
 
   @Override
   public String toStringOp() {
     return Constants.IMPLIES;
-  }   
+  }
 }

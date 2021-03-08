@@ -28,7 +28,7 @@ public class BooleanValue implements booleanoofunc.BooleanExpression {
   @Override
   public boolean equals(Object other) {
     return other != null
-        && other.getClass().equals(BooleanValue.class) 
-        && ((BooleanValue)other).value.equals(value);
+        && other.getClass().equals(BooleanValue.class)
+        && ((BooleanValue) other).value.equals(value);
   }
 }

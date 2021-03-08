@@ -1,14 +1,14 @@
 package booleanoofunc;
 
-import booleanoofunc.UnassignedVariableException;
-
 import java.util.Map;
 
 public interface BooleanExpression {
-    public Boolean evaluate(Map<String, Boolean> context) throws booleanoofunc.UnassignedVariableException;
-    public booleanoofunc.BooleanExpression simplify(Map<String, Boolean> context);
+  public Boolean evaluate(Map<String, Boolean> context)
+      throws booleanoofunc.UnassignedVariableException;
 
-    public boolean equals(Object other);
+  public booleanoofunc.BooleanExpression simplify(Map<String, Boolean> context);
 
-    public String toString();
+  public boolean equals(Object other);
+
+  public String toString();
 }
