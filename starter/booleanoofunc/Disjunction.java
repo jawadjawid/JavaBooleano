@@ -3,7 +3,14 @@ package booleanoofunc;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
 
+/** Disjunction expression. */
 public class Disjunction extends BinaryExpression {
+  /**
+   * construct.
+   *
+   * @param left side
+   * @param right side
+   */
   public Disjunction(BooleanExpression left, BooleanExpression right) {
     super(
         (x, y) -> (x || y),

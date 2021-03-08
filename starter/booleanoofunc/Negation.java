@@ -1,5 +1,6 @@
 package booleanoofunc;
 
+/** Negation Expression. */
 public class Negation extends UnaryExpression {
 
   // This is to get you started using Java's functional features.

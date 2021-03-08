@@ -3,11 +3,14 @@ package booleanoofunc;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
 
+/** Conjunction expression. */
 public class Conjunction extends BinaryExpression {
 
   /**
-   * @param left
-   * @param right
+   * construct.
+   *
+   * @param left side.
+   * @param right side.
    */
   public Conjunction(BooleanExpression left, BooleanExpression right) {
     super(
@@ -17,11 +20,6 @@ public class Conjunction extends BinaryExpression {
         Conjunction::simplifyAnd); // this is called a "method reference"
   }
 
-  /**
-   * @param left
-   * @param right
-   * @return
-   */
   private static BooleanExpression simplifyAnd(BooleanExpression left, BooleanExpression right) {
     BooleanValue trueObj = new BooleanValue(true);
     BooleanValue falseObj = new BooleanValue(false);

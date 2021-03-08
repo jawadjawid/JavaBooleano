@@ -4,12 +4,20 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.function.UnaryOperator;
 
+/** Unary Expression. */
 public abstract class UnaryExpression implements BooleanExpression {
 
   private UnaryOperator<Boolean> operator;
   private booleanoofunc.BooleanExpression operand;
   private Function<BooleanExpression, BooleanExpression> simplifier;
 
+  /**
+   * construct.
+   *
+   * @param operator type.
+   * @param operand value.
+   * @param simplifier function.
+   */
   public UnaryExpression(
       UnaryOperator<Boolean> operator,
       BooleanExpression operand,

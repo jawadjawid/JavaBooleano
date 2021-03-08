@@ -2,6 +2,7 @@ package booleanoofunc;
 
 import java.util.Map;
 
+/** Boolean Expression. */
 public interface BooleanExpression {
   public Boolean evaluate(Map<String, Boolean> context)
       throws booleanoofunc.UnassignedVariableException;

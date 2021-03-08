@@ -2,6 +2,7 @@ package booleanoofunc;
 
 import java.util.Map;
 
+/** Boolean Value. */
 public class BooleanValue implements booleanoofunc.BooleanExpression {
 
   private Boolean value;

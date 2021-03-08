@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 
+/** Boolean Expressions methods to be applied on a list of Booleans in functional programming. */
 public abstract class BooleanExpressions {
 
   // Returns a List of the results of evaluating all expressions. Do NOT use any loops.
@@ -15,6 +16,14 @@ public abstract class BooleanExpressions {
     return expressions.stream().map(a -> a.evaluate(context)).collect(Collectors.toList());
   }
 
+  /**
+   * evaluateAndReduce.
+   *
+   * @param expressions list of boolean expressions.
+   * @param context of values.
+   * @return conjuction of all results of evaluating all expressions.
+   * @throws booleanoofunc.UnassignedVariableException for when context doesnt contain a value
+   */
   // Returns the conjuction of all results of evaluating all expressions. Do NOT use any loops.
   // Use Java Streams and the method reduce ONLY.
   public static Boolean evaluateAndReduce(

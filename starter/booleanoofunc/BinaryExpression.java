@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
 
+/** Binary Expression. */
 public abstract class BinaryExpression implements BooleanExpression {
 
   private BinaryOperator<Boolean> operator;
@@ -11,6 +12,14 @@ public abstract class BinaryExpression implements BooleanExpression {
   private booleanoofunc.BooleanExpression right;
   private BiFunction<BooleanExpression, BooleanExpression, BooleanExpression> simplifier;
 
+  /**
+   * construct.
+   *
+   * @param operator binary opreator
+   * @param left side
+   * @param right side
+   * @param simplifier function
+   */
   public BinaryExpression(
       BinaryOperator<Boolean> operator,
       booleanoofunc.BooleanExpression left,

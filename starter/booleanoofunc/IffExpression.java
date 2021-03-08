@@ -3,7 +3,14 @@ package booleanoofunc;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
 
+/** Iff Expression. */
 public class IffExpression extends BinaryExpression {
+  /**
+   * if and only if exprssion.
+   *
+   * @param left side
+   * @param right side
+   */
   public IffExpression(BooleanExpression left, BooleanExpression right) {
     super(
         (x, y) -> (x == y),
@@ -23,8 +30,14 @@ public class IffExpression extends BinaryExpression {
     } else if (right.equals(trueObj)) {
       return left;
     } else if (left.equals(falseObj)) {
+      if (right instanceof Negation) {
+        return ((Negation) right).getOperand();
+      }
       return new Negation(right);
     } else if (right.equals(falseObj)) {
+      if (left instanceof Negation) {
+        return ((Negation) left).getOperand();
+      }
       return new Negation(left);
     }
     return new IffExpression(left, right);

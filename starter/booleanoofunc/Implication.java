@@ -3,7 +3,14 @@ package booleanoofunc;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
 
+/** Implication expression. */
 public class Implication extends BinaryExpression {
+  /**
+   * construct.
+   *
+   * @param left side
+   * @param right side
+   */
   public Implication(BooleanExpression left, BooleanExpression right) {
     super(
         (x, y) -> (!x || y),
@@ -22,6 +29,9 @@ public class Implication extends BinaryExpression {
     } else if (left.equals(trueObj)) {
       return right;
     } else if (right.equals(falseObj)) {
+      if (left instanceof Negation) {
+        return ((Negation) left).getOperand();
+      }
       return new Negation(left);
     } else if (left.equals(falseObj) || right.equals(trueObj)) {
       return trueObj;
