@@ -1,5 +1,6 @@
 package booleanoo;
 
+/** Not Opreator. */
 public class Not implements UnaryOperator {
 
   @Override

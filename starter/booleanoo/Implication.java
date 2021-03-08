@@ -2,11 +2,18 @@ package booleanoo;
 
 import java.util.Map;
 
+/** Implication. */
 public class Implication extends BinaryExpression {
 
   public Implication(BooleanExpression left, BooleanExpression right) {
     super(new Implies(), left, right);
   }
+  /**
+   * simplfy.
+   *
+   * @param context of evaluation.
+   * @return simplfied version.
+   */
 
   public BooleanExpression simplify(Map<String, Boolean> context) {
     BooleanValue trueObj = new BooleanValue(true);

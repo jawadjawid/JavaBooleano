@@ -2,11 +2,16 @@ package booleanoo;
 
 import java.util.Map;
 
+/** Disjunction. */
 public class Disjunction extends BinaryExpression {
   public Disjunction(BooleanExpression left, BooleanExpression right) {
     super(new Or(), left, right);
   }
 
+  /**
+   * @param context Context of evaluation
+   * @return simplifeid version
+   */
   public BooleanExpression simplify(Map<String, Boolean> context) {
     BooleanValue trueObj = new BooleanValue(true);
     BooleanValue falseObj = new BooleanValue(false);

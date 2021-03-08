@@ -2,6 +2,7 @@ package booleanoo;
 
 import java.util.Map;
 
+/** A BooleanValue. */
 public class BooleanValue implements BooleanExpression {
 
   private Boolean value;
@@ -28,7 +29,7 @@ public class BooleanValue implements BooleanExpression {
   @Override
   public boolean equals(Object other) {
     return other != null
-        && other.getClass().equals(BooleanValue.class) 
+        && other.getClass().equals(BooleanValue.class)
         && ((BooleanValue) other).value.equals(value);
   }
 }

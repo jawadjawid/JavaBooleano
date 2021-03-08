@@ -1,5 +1,6 @@
 package booleanoo;
 
+/** Implies opreator. */
 public class Implies implements BinaryOperator {
 
   @Override

@@ -5,6 +5,10 @@ import java.util.function.BinaryOperator;
 
 public class Conjunction extends BinaryExpression {
 
+  /**
+   * @param left
+   * @param right
+   */
   public Conjunction(BooleanExpression left, BooleanExpression right) {
     super(
         (x, y) -> (x && y),
@@ -13,6 +17,11 @@ public class Conjunction extends BinaryExpression {
         Conjunction::simplifyAnd); // this is called a "method reference"
   }
 
+  /**
+   * @param left
+   * @param right
+   * @return
+   */
   private static BooleanExpression simplifyAnd(BooleanExpression left, BooleanExpression right) {
     BooleanValue trueObj = new BooleanValue(true);
     BooleanValue falseObj = new BooleanValue(false);

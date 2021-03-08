@@ -2,12 +2,24 @@ package booleanoo;
 
 import java.util.Map;
 
+/** Iff Expression. */
 public class IffExpression extends BinaryExpression {
-
+  /**
+   * If and only if expression.
+   *
+   * @param left side of expression.
+   * @param right side of expression.
+   */
   public IffExpression(BooleanExpression left, BooleanExpression right) {
     super(new Iff(), left, right);
   }
 
+  /**
+   * simplfy.
+   *
+   * @param context of evaluation.
+   * @return simplfied version.
+   */
   public BooleanExpression simplify(Map<String, Boolean> context) {
     BooleanValue trueObj = new BooleanValue(true);
     BooleanValue falseObj = new BooleanValue(false);

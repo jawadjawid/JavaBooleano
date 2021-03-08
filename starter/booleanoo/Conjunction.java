@@ -1,13 +1,25 @@
 package booleanoo;
 
-
 import java.util.Map;
 
-public class Conjunction extends BinaryExpression  {
+/** A Conjunction. */
+public class Conjunction extends BinaryExpression {
+  /**
+   * Contract.
+   *
+   * @param left left side.
+   * @param right right side.
+   */
   public Conjunction(BooleanExpression left, BooleanExpression right) {
     super(new And(), left, right);
   }
 
+  /**
+   * simplify.
+   *
+   * @param context context of eval.
+   * @return simplifeid version
+   */
   public BooleanExpression simplify(Map<String, Boolean> context) {
     BooleanValue trueObj = new BooleanValue(true);
     BooleanValue falseObj = new BooleanValue(false);

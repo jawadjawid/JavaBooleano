@@ -2,11 +2,18 @@ package booleanoo;
 
 import java.util.Map;
 
+/** Negation Expression. */
 public class Negation extends UnaryExpression {
   public Negation(BooleanExpression op) {
     super(new Not(), op);
   }
 
+  /**
+   * Simplify.
+   *
+   * @param context of evaluation.
+   * @return simple version
+   */
   public BooleanExpression simplify(Map<String, Boolean> context) {
     BooleanValue trueObj = new BooleanValue(true);
     BooleanValue falseObj = new BooleanValue(false);

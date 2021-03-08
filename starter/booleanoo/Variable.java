@@ -2,6 +2,7 @@ package booleanoo;
 
 import java.util.Map;
 
+/** Variable name. */
 public class Variable implements BooleanExpression {
 
   private String id;

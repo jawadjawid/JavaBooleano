@@ -1,5 +1,6 @@
 package booleanoo;
 
+/** Iff Opreator. */
 public class Iff implements BinaryOperator {
 
   @Override

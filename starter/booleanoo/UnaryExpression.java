@@ -2,6 +2,7 @@ package booleanoo;
 
 import java.util.Map;
 
+/** Unary Expression. */
 public abstract class UnaryExpression implements BooleanExpression {
 
   private UnaryOperator operator;
