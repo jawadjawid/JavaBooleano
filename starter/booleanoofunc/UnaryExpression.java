@@ -24,7 +24,7 @@ public abstract class UnaryExpression implements BooleanExpression {
   }
 
   public booleanoofunc.BooleanExpression simplify(Map<String, Boolean> context) {
-    return simplifier.apply(this.operand.simplify(context)).simplify(context);
+    return simplifier.apply(this.operand.simplify(context));
   }
 
   @Override

@@ -29,8 +29,7 @@ public abstract class BinaryExpression implements BooleanExpression {
 
   public booleanoofunc.BooleanExpression simplify(Map<String, Boolean> context) {
     return simplifier
-        .apply(this.left.simplify(context), this.right.simplify(context))
-        .simplify(context);
+        .apply(this.left.simplify(context), this.right.simplify(context));
   }
 
   @Override
